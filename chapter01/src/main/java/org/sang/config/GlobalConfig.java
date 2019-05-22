@@ -9,10 +9,10 @@ import java.util.Map;
 @ControllerAdvice
 public class GlobalConfig {
     @ModelAttribute(value = "info")
-    public Map<String,String> userInfo(){
-        HashMap<String,String> map = new HashMap<>();
-        map.put("username","吳承安");
-        map.put("gender","男");
+    public Map<String, String> userInfo() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("username", "吳承安");
+        map.put("gender", "男");
         return map;
     }
 }

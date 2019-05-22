@@ -11,11 +11,11 @@ import java.util.Set;
 @RestController
 public class HelloController {
     @GetMapping("/hello")
-    public void hello(Model model){
-        Map<String,Object> map = model.asMap();
+    public void hello(Model model) {
+        Map<String, Object> map = model.asMap();
         Set<String> keySet = map.keySet();
         Iterator<String> iterator = keySet.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             String key = iterator.next();
             Object value = map.get(key);
             System.out.println(key + ">>>>>" + value);

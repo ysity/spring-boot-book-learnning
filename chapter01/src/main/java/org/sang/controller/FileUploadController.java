@@ -17,20 +17,21 @@ import java.util.UUID;
 public class FileUploadController {
     private static final Logger logger = (Logger) LoggerFactory.getLogger(FileUploadController.class);
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+
     @PostMapping("/upload")
-    public String upload(MultipartFile uploadFile , HttpServletRequest request){
+    public String upload(MultipartFile uploadFile, HttpServletRequest request) {
         String realPath = request.getSession().getServletContext().getRealPath("/uploadFile/");
         String format = sdf.format(new Date());
         File folder = new File(realPath + format);
-        if (!folder.isDirectory()){
+        if (!folder.isDirectory()) {
             folder.mkdirs();
         }
         String oldName = uploadFile.getOriginalFilename();
         logger.info("上傳的文件名為:" + oldName);
-        String newName = UUID.randomUUID().toString() + oldName.substring(oldName.lastIndexOf("."),oldName.length());
+        String newName = UUID.randomUUID().toString() + oldName.substring(oldName.lastIndexOf("."), oldName.length());
         logger.info("創建的新文件名為:" + newName);
         try {
-            uploadFile.transferTo(new File(folder,newName));
+            uploadFile.transferTo(new File(folder, newName));
             String filePath = request.getScheme() + "://" + request.getServerName() + ":"
                     + request.getServerPort() + "/uploadFile/" + format + newName;
             return filePath;

@@ -22,7 +22,8 @@
                 <version>2.1.4.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency></dependencies>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <dependencies>
@@ -38,8 +39,8 @@
 
         <!--jetty-->
         <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
         <!--</dependency>-->
 
         <!--lombok-->
